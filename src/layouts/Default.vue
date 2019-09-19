@@ -105,7 +105,7 @@
       loginOutFun () {
         this.userList && this.$socket.emit('logout', this.userName)
         this.setUserName('')
-        window.localStorage.removeItem('userName')
+        window.sessionStorage.removeItem('userName')
         this.leftDrawerOpen = !this.leftDrawerOpen
       }
     }

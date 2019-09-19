@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     list: [],
     userList: [],
-    userName: window.localStorage.getItem('userName') || ''
+    userName: window.sessionStorage.getItem('userName') || ''
   },
   mutations: {
     SET_VALUE (state, [key, val]) {
@@ -28,7 +28,7 @@ export default new Vuex.Store({
       commit('UPDATE_VALUE', ['list', data])
     },
     setUserName ({ commit }, value) {
-      window.localStorage.setItem('userName', value)
+      window.sessionStorage.setItem('userName', value)
       commit('SET_VALUE', ['userName', value])
     }
   }
